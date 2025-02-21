@@ -26,7 +26,7 @@ Vagrant.configure("2") do |config|
 
   config.trigger.after :up do |trigger|
     trigger.info = "Launch app"
-    trigger.run = { inline: "vagrant ssh -c 'pwd'" }
+    trigger.run = { inline: "vagrant ssh -c 'ip a; git clone https://github.com/yoorita/vagrant-lykova.git; cd vagrant-lykova; ./gradlew bootRun'" }
   end
   
 end
